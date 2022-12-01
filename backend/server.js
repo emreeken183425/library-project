@@ -20,14 +20,18 @@ mongoose.connect('mongodb+srv://emreeken1834:Erzurum25!@cluster0.weh8m1n.mongodb
         console.log("hata oluştu",err);
     })
 
+// post ile databae gönderdiğimiz verileri get ile çağırdık
+app.get('/books',(req,res)=>{
+    BookStore.find().then(books =>res.json(books))
+})
 
 
+// post işlemi
 app.post('/newbook',async (req,res)=>{
     try {
        const newBook=new BookStore({
         bookName:req.body.bookName,
         author:req.body.author,
-        category:req.body.category,
         quantity:req.body.quantity,
         department:req.body.department,
         publisher:req.body.publisher,
@@ -43,6 +47,21 @@ app.post('/newbook',async (req,res)=>{
         console.log(err);
     }
 } )
+
+
+app.delete('/delete/:id',(req,res)=>{
+    const id=req.params.id;
+    BookStore.findByIdAndDelete({_id:id},(err)=>{
+        if(!err){
+
+            console.log("Book Deleted");
+        }else{
+            console.log(err);
+        }
+    })
+})
+
+
 
 
 app.listen(5000,()=>{
