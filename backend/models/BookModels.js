@@ -3,20 +3,17 @@ const mongoose=require('mongoose')
 const bookSchema=new mongoose.Schema({
     bookName:{
         type:String,
-        required:true,
-        unique:true
+        unique: false
+        
+        
     },
     author:{
         type:String,
-        required:true,
-    },
-    quantity:{
-        type:Number,
-        required:true,
+        
     },
     department:{
         type:String,
-        required:true,
+        
     },
     publisher:{
         type:String,

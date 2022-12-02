@@ -60,8 +60,21 @@ app.delete('/delete/:id',(req,res)=>{
         }
     })
 })
-
-
+// UPDATE İŞLEMİ
+app.put('/lend/:id',async(req,res)=>{
+    try {
+        await BookStore.findByIdAndDelete(req.params.id)
+    } catch (err) {
+        console.log(err);
+    }
+})
+app.put('/back/:id',async(req,res)=>{
+    try {
+        await BookStore.findByIdAndUpdate(req.params.id)
+    } catch (err) {
+        console.log(err);
+    }
+})
 
 
 app.listen(5000,()=>{
