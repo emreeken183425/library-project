@@ -29,18 +29,7 @@ function AddBook({book,handleChange,addBook}) {
             />
             <label htmlFor="floatingInput">Author</label>
           </div>
-          {/* <div className="form-floating mb-3">
-            <input
-              type="text"
-             // value={book.publisher}
-              onChange={handleChange}
-              name="publisher"
-              className="form-control"
-              id="floatingInput"
-              placeholder="publisher"
-            />
-            <label htmlFor="floatingInput">Publisher</label>
-          </div> */}
+          
           <div className="form-floating mb-3">
           <input
               type="text"
@@ -53,32 +42,32 @@ function AddBook({book,handleChange,addBook}) {
             />
             <label htmlFor="floatingSelect"> Department</label>
           </div>
-          <div className="form-floating mb-3">
+           <div className="form-floating mb-3">
             <input
-              type="number"
-             //value={book.publisher}
+              type="text"
+              //value={book.publisher}
               onChange={handleChange}
-              name="quantity"
+              name="publisher"
               className="form-control"
               id="floatingInput"
-              placeholder="quantity"
+              placeholder="publisher"
             />
-            <label htmlFor="floatingInput">Quantity</label>
+            <label htmlFor="floatingInput">Publisher</label>
           </div>
-          <div className="form-floatingmb-3">
-          <label htmlFor="floatingTextarea2">Comments</label>
-            <textarea
-              className="form-control"
-            //  value={book.comments}
+          
+          <div className="form-floating mb-3">
+            <input
+              type="text"
+             //value={book.comments}
               onChange={handleChange}
-              name="comments"
-              placeholder="Leave a comment here"
-              id="floatingTextarea2"
-              style={{height: "25px"}}
-            >
-            </textarea>
-            
+              name="Comments"
+              className="form-control"
+              id="floatingInput"
+              placeholder="Comments"
+            />
+            <label htmlFor="floatingInput">Comments</label>
           </div>
+          
           <button type="button" onClick={addBook} className="btn btn-primary mb-3">Add Book</button>
         </form>
       </div>
